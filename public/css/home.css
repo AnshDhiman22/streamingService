@@ -1,0 +1,429 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=New+Amsterdam&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+}
+
+.container2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;  
+    background-color: black;
+}
+
+
+.nav { 
+    position: sticky;
+    top: 0;
+    z-index: 70;
+    width: 100%;
+    height: 80px;
+    background-color: #151515;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.container2 .nav .logo, .nav-a ,img {
+    height: 70px;
+    width: 250px;
+}
+
+.search {
+    display: flex;
+    width: 500px;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-search form {
+    width: 390px;
+    height: 45px;
+    border-radius: 55px;
+    background-color: rgb(46, 46, 46);
+    display: flex;
+    align-items: center;
+}
+
+.input-search form input {
+    margin-left: 14px;
+    width: 320px;
+    padding: 5px;
+    outline: none;
+    border: none;
+    background: none;
+    font-size: 16px;
+    color: rgb(201, 201, 201);
+}
+
+.input-search form button {
+    height: 45px;
+    width: 45px;
+    margin-left: 11px;
+    background: none;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    background-color: rgb(255, 0, 0);
+    border-radius: 50%;
+}
+
+.input-search form button:hover {
+    background-color: rgb(255, 81, 81);
+}
+
+.search-btn button i {
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+}
+
+.pages {
+    width: 900px;
+}
+
+.container2 .nav .pages ul {
+    align-items: center;
+    justify-content: space-evenly;
+    display: flex;
+}
+
+.container2 .nav .pages ul li {
+    text-decoration: none;
+    list-style: none;
+}
+
+.container2 .nav .pages ul li .nav-a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-family:  "Poppins", sans-serif ;
+    padding: 5px 18px;
+    border-radius: 20px;
+    font-weight: 300;
+}
+
+.pages ul li a button {
+    padding: 9px 22px 9px 22px;
+    background-color: rgb(255, 0, 0);
+    border-radius: 5px;
+    border: 2px solid rgb(255, 0, 0);
+    font-size: 17px;
+    font-family:  "Poppins", sans-serif ;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+}
+
+.container2 .nav .pages ul li a button:hover {
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(255, 255, 255);
+    color: rgb(255, 0, 0);
+}
+
+.container2 .nav .pages ul li .nav-a:hover{
+    background-color: rgb(211, 0, 0);
+}
+
+.slider {
+    height: 500px;
+    width: 100%;
+    display: flex;
+    background-color: black;
+    align-items: center;
+}
+
+.arrows {
+    height: 70px;
+    width: 140px;
+    position: absolute;
+    top: 465px;
+    right: 40px;
+}
+
+.slider .arrow-left , .arrow-right {
+    height: 50px;
+    width: 50px;
+    background-color: rgba(255, 255, 255, 0.352);
+    backdrop-filter: blur(10px);
+    border-radius: 5px;
+    margin-left: 12px;
+    margin-top: 10px;
+}
+
+.slider .arrow-left {
+    transform: rotate(180deg);
+}
+
+.frame {
+    background-color: white;
+    height : 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.main-slider {
+    display: flex;
+    transition: all 1s ease;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.studios {
+    width: 100%;
+    height: 300px;
+}
+
+.studios-title h1 {
+    color: #ffffff;
+    font-size: 50px;
+    font-family:  "Poppins", sans-serif ;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.studios ul {
+  display: flex;
+  margin-top: 12px;
+}
+
+.studios ul li {
+    height: 200px;
+    width: 214px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 35px;
+    position: relative;
+
+}
+
+.studios ul li img {
+    height: 140px;
+    width: 190px;
+    z-index: 5;
+    border-radius: 10px;
+    border: 3px solid rgb(255, 255, 255);
+}
+
+.studios ul li h4 {
+    color: #ffffff;
+    margin-top: 10px;
+    font-size: 18px;
+    font-family:  "Poppins", sans-serif ;
+    font-weight: 300;
+}
+
+.cover {
+    background-color: #464646;
+    height: 140px;
+    width: 140px;
+    position: absolute;
+    z-index: 6;
+    display: none;
+    left: 12px;
+    border-radius: 10px;
+}
+
+.studios ul li:hover .cover {
+    display: block;
+}
+
+.movies {
+    height: 390px;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+}
+
+.movies-title{
+    margin-bottom: 5px;
+}
+
+.movies-title h1 {
+    color: white;
+    margin-left: 40px;
+    font-size: 30px;
+    font-family:  "Poppins", sans-serif ;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.movies ul {
+ display: flex;
+ margin-left: 20px;
+ overflow: scroll;
+}
+
+.movies ul li{
+    height: 310px;
+    width: 212px;
+    background-color: rgb(0, 0, 0);
+    margin-left: 17px;
+    list-style: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.movies ul li img {
+    height: 300px;
+    width: 212px;
+}
+
+.movie-card {
+    top: 0;
+    position: absolute;
+    height: 300px;
+    width: 212px;
+    background-color: #000000a5;
+    backdrop-filter: blur(2px);
+    display: none;
+}
+
+.images {
+    height: 216px !important;
+    width: 155px !important;
+    margin-left: 29px;
+    margin-bottom: 7px;
+}
+
+.movie-card a {
+    padding: 4px 10px;
+    background-color: red;
+    color: white;
+    text-decoration: none;
+    margin-left: 48px;
+    position: relative;
+    font-family:  "Poppins", sans-serif ;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px;
+    border-radius: 20px;
+}
+
+.movie-card h4 {
+    color: white;
+    font-family:  "Poppins", sans-serif ;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+  
+
+.movies ul li:hover .movie-card {
+    display: block;
+}
+
+.fa-bars {
+    margin-right:20px ;
+    font-size: 30px;
+    color: #ffffff;
+}
+
+.menu {
+    display: none;
+}
+
+#chk1 {
+   display: none;
+}
+
+.movies ul::-webkit-scrollbar {
+    display: none;
+}
+
+  
+.film-name h4 {
+    color: white;
+    margin-top: 10px;
+    margin-left: 5px;
+    font-family:  "Poppins", sans-serif ;
+}
+ 
+.fa-play {
+     font-size: 14px;
+     color: rgb(255, 255, 255);
+     margin-right: 5px;
+}
+ 
+
+ 
+/* scrollbar */
+
+
+body {
+    --sb-track-color: #868686;
+    --sb-thumb-color: #464646;
+    --sb-size: 10px;
+  }
+  
+  body::-webkit-scrollbar {
+    width: var(--sb-size)
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 1px;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 1px;
+    
+  }
+
+  @supports not selector(::-webkit-scrollbar) {
+    body {
+      scrollbar-color: var(--sb-thumb-color)
+                       var(--sb-track-color);
+    }
+
+}
+
+.profile {
+    height: 50px;
+    width: 50px;
+    background-color: #868686;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.fa-user {
+    font-size: 34px;
+    color: #ffffff;
+}
+
+.username {
+ color: white;
+}
+
+.user {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}

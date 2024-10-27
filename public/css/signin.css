@@ -1,0 +1,449 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=New+Amsterdam&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: black;
+}
+
+
+.container2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;  
+    background-color: black;
+}
+
+.nav {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    width: 100%;
+    height: 80px;
+    background-color: rgb(15, 15, 15);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.container2 .nav .logo, .nav-a ,img {
+    height: 70px;
+    width: 250px;
+}
+
+.search {
+    display: flex;
+    width: 500px;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-search {
+    width: 350px;
+    height: 45px;
+    border-radius: 55px;
+    background-color: rgb(46, 46, 46);
+}
+
+.input-search input {
+ margin-left: 14px;
+ margin-top: 8px;
+ width: 320px;
+ padding: 5px;
+ outline: none;
+ border: none;
+ background: none;
+ font-size: 18px;
+ color: rgb(201, 201, 201);
+}
+
+.search-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    margin-left: 5px;
+}
+.search-btn button {
+    height: 45px;
+    width: 45px;
+    background: none;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+}
+
+.search-btn button i {
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+}
+
+.pages {
+    width: 900px;
+}
+
+.container2 .nav .pages ul {
+
+    align-items: center;
+    justify-content: space-evenly;
+    display: flex;
+}
+
+.container2 .nav .pages ul li {
+    text-decoration: none;
+    list-style: none;
+}
+
+.container2 .nav .pages ul li a {
+    text-decoration: none;
+    color: rgb(152, 152, 152);
+    font-size: 20px;
+    font-family:  "Poppins", sans-serif ;
+}
+
+.pages ul li a button {
+    padding: 9px 22px 9px 22px;
+    background-color: rgb(255, 0, 0);
+    border-radius: 5px;
+    border: 2px solid rgb(255, 0, 0);
+    font-size: 17px;
+    font-family:  "Poppins", sans-serif ;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    transition: .3s all ease;
+}
+
+.container2 .nav .pages ul li a button:hover {
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(255, 255, 255);
+    color: rgb(255, 0, 0);
+}
+
+.container2 .nav .pages ul li a:hover{
+    color: rgb(255, 255, 255);
+}
+
+
+.form-wrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border-radius: 4px;
+    padding: 70px;
+    width: 450px;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, .75);
+}
+
+.form-wrapper h2 {
+    color: #fff;
+    font-size: 2rem;
+}
+
+.form-wrapper form {
+    margin: 25px 0 65px;
+}
+
+form .form-control {
+    height: 50px;
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.form-control input {
+    height: 100%;
+    width: 100%;
+    background: #333;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 1rem;
+    padding: 0 20px;
+}
+
+.form-control input:is(:focus, :valid) {
+    background: #444;
+    padding: 16px 20px 0;
+}
+
+.form-control label {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    pointer-events: none;
+    color: #8c8c8c;
+    transition: all 0.1s ease;
+}
+
+.form-control input:is(:focus, :valid)~label {
+    font-size: 0.75rem;
+    transform: translateY(-130%);
+}
+
+form button {
+    width: 100%;
+    padding: 16px 0;
+    font-size: 1rem;
+    background: #e50914;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    margin: 25px 0 10px;
+    cursor: pointer;
+    transition: 0.1s ease;
+}
+
+form button:hover {
+    background: #c40812;
+}
+
+.form-wrapper a {
+    text-decoration: none;
+}
+
+.form-wrapper a:hover {
+    text-decoration: underline;
+}
+
+.form-wrapper :where(label, p, small, a) {
+    color: #b3b3b3;
+}
+
+form .form-help {
+    display: flex;
+    justify-content: space-between;
+}
+
+form .remember-me {
+    display: flex;
+}
+
+form .remember-me input {
+    margin-right: 5px;
+    accent-color: #b3b3b3;
+}
+
+form .form-help :where(label, a) {
+    font-size: 0.9rem;
+}
+
+.form-wrapper p a {
+    color: #fff;
+}
+
+.form-wrapper small {
+    display: block;
+    margin-top: 15px;
+    color: #b3b3b3;
+}
+
+.form-wrapper small a {
+    color: #0071eb;
+}
+
+@media (max-width: 740px) {
+    body::before {
+        display: none;
+    }
+
+    nav, .form-wrapper {
+        padding: 20px;
+    }
+
+    nav a img {
+        width: 140px;
+    }
+
+    .form-wrapper {
+        width: 100%;
+        top: 43%;
+    }
+
+    .form-wrapper form {
+        margin: 25px 0 40px;
+    }
+}
+
+.menu {
+    display: none;
+  }
+  
+  #chk1 {
+   display: none;
+  }
+  
+  .fa-bars {
+    margin-right:20px ;
+    font-size: 30px;
+    color: #ffffff;
+  }
+  
+  @media(max-width:1360px){
+    .nav .pages ul {
+        position: fixed;
+        top: 80px;
+        right: -100%;
+        background-color: #181818;
+        height: calc(100vh - 80px );
+        width: 50%;
+        flex-direction: column;
+        align-items: center;
+        transition: right 0.5s linear;
+       }
+  
+       .container2 .nav .search {
+        margin-left: 210px;
+       }
+  
+       .container2 .nav .logo {
+        margin-left: 20px;
+       }
+  
+       .container2 .nav .menu {
+        display: block;
+       }
+  
+       #chk1:checked ~ .pages ul {
+        right: 0;
+       }
+  }
+  
+  @media(max-width:960px){
+  
+    .container2 .nav .search {
+        margin-left: 50px;
+       }
+  
+       .container2 .nav .logo {
+        margin-left: 0px;
+       }   
+       
+  }
+  
+  @media(max-width:777px){
+    
+    .container2 .nav .logo a img {
+        height: 40px;
+        width: 120px;
+    }
+  
+    .container2 .nav .logo {
+        height: 40px;
+        width: 120px;
+        margin-left: 5px;
+    }
+  
+    .container2 .nav .search , .input-search , .search-btn {
+        height: 40px;
+        width: 280px;
+    }
+  
+    .container2 .nav .search .input-search input {
+        height: 30px;
+        padding-bottom: 10px ;
+        width: 120px;
+    }
+    
+    
+  }
+  
+  @media(max-width:640px){
+  
+    .container2 .nav .logo a img {
+        height: 40px;
+        width: 140px;
+    }
+  
+    .container2 .nav .logo {
+        height: 40px;
+        width: 140px;
+        margin-left: 5px;
+    }
+  
+    .container2 .nav .search , .input-search , .search-btn {
+        height: 40px;
+        width: 230px;
+    }
+  
+    .container2 .nav .search .input-search input {
+        height: 30px;
+        padding-bottom: 10px ;
+        width: 120px;
+    }
+  
+    .container2 .nav .search {
+        margin-left: 40px;
+      }
+  }
+  
+  @media(max-width:475px){
+    .container2 .nav .search .input-search {
+        height: 30px;
+        width: 180px;
+    }
+  
+  
+    .nav .pages ul {
+        top: 60px;
+        height: calc(100vh - 60px );
+       }
+  
+  
+    .container2 .nav .logo a img {
+        height: 35px;
+        width: 90px;
+    }
+  
+    .fa-magnifying-glass button {
+        height: 5px;
+        width: 5px;
+    }
+  
+    .container2 .nav .search .input-search input {
+        height: 30px;
+        padding-bottom: 18px ;
+        margin-left: 5px;
+        font-size: 14px;
+        width: 170px;
+    }
+  
+    .nav {
+        height: 60px;
+    }
+  
+    .container2 .nav .logo {
+        margin-left: 5px;
+    }
+  
+    .container2 .nav .search {
+        margin-left: 10px;
+      }
+  }
+
+.error-message {
+    background: white;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: 2px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.fa-triangle-exclamation {
+    color: red;
+}
