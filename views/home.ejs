@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies Geeks</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="icon" href="/images/web logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container2">
+        <div class="nav">
+            <div class="logo">
+                <a href="">
+                    <img src="/images/logo web 1.png" alt="">
+                </a>
+            </div>
+            <div class="search">
+                <div class="input-search">
+                    <form action="/search">
+                    <input class="search" type="text" name="q" autocomplete="off" placeholder="Search">
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="pages">
+                <ul><% for(user of user){ %>
+                    <li><a class="nav-a" href="/home">Home</a></li>
+                    <li><a class="nav-a" href="/about">About</a></li>
+                    <li><a class="nav-a" href="/tv">Tv Series</a></li>
+                    <li><a class="nav-a" href="/watch-later">Watch later</a></li>
+                    <% if (user.profile_image) { %>
+                    <a class="user"  href="/profile/<%= userId %>">
+                        <li class="profile">
+                            <img src="<%= user.profile_image %>" alt="">
+                        </li>
+                        <h4 class="username"><%= user.username %></h4>
+                    </a>
+                    <% } else { %>
+                    <a class="user" href="/profile/<%= userId %>">
+                        <li class="profile">
+                            <i class="fa-solid fa-user"></i>
+                        </li>
+                        <h4 class="username"><%= user.username %></h4>
+                    </a>
+                    <% } %>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+
+
+        <!-- slider -->
+
+        <div class="slider">
+            <div class="frame">
+                <div class="main-slider">
+                    <img src="/images/simage1.jpg" class="image">
+                    <img src="/images/simage2.jpg" class="image">
+                    <img src="/images/simage3.jpg" class="image">
+                    <img src="/images/simage4.jpg" class="image">
+                </div>
+                <div class="arrows">
+                    <img src="/images/arrow.png" class="arrow-left">
+                    <img src="/images/arrow.png" class="arrow-right">
+                </div>
+            </div>
+        </div>
+
+        <!-- Main-body -->
+
+        <div class="hero">
+            <div class="studios">
+                <div class="studios-title">
+                    <h1>Studios</h1>
+                </div>
+                <ul>
+                    <li>
+                        <img src="/images/marvel.jpg" alt="">
+                        <div class="cover">
+                            <img src="https://lowbrowcomics.wordpress.com/wp-content/uploads/2015/05/01-klqa0to.gif"></img>
+                        </div>
+                        <h4>MARVEL STUDIOS</h4>
+                    </li>
+                    <li>
+                        <img src="/images/disney.jpg" alt="">
+                        <div class="cover">
+                            <img src="https://i.makeagif.com/media/11-10-2019/MY5TfA.gif"></img>
+                        </div>
+                        <h4>DISNEY</h4>
+                    </li>
+                    <li>
+                        <img src="/images/Univeral.jpg" alt="">
+                        <div class="cover">
+                            <img src="https://j.gifs.com/vnOxpj.gif"></img>
+                        </div>
+                        <h4>UNIVERSAL</h4>
+                    </li>
+                    <li>
+                        <img src="/images/paramount.jpg" alt="">
+                        <div class="cover">
+                            <img src="https://i.makeagif.com/media/8-23-2016/CAph_f.gif"></img>
+                        </div>
+                        <h4>PARAMOUNT</h4>
+                    </li>
+                    <li>
+                        <img src="/images/warner bros.jpg" alt="">
+                        <div class="cover">
+                            <img src="https://miro.medium.com/v2/resize:fit:1200/1*TZhcUOolPHbdOzGF86b7kg.gif"></img>
+                        </div>
+                        <h4>WARNER BROTHERS</h4>
+                    </li>
+                    <li>
+                        <img src="/images/sony.jpg" alt="">
+                        <div class="cover">
+                            <img
+                                src="https://i.makeagif.com/media/9-16-2015/fHWxPA.gif"></img>
+                        </div>
+                        <h4>SONY PICTURES</h4>
+                    </li>
+                    <li>
+                        <img src="/images/20 century.jpg" alt="">
+                        <div class="cover">
+                            <img src="https://media.tenor.com/JNGCUXHr6EAAAAAM/20th-century-fox-logo-turn.gif"></img>
+                        </div>
+                        <h4>CENTURY STUDIOS</h4>
+                    </li>
+                    <li>
+                        <img src="/images/pixar.jpg" alt="">
+                        <div class="cover">
+                            <img src="https://media.tenor.com/LiqoxQ9gSR4AAAAM/pixx-pixar.gif"></img>
+                        </div>
+                        <h4>PIXAR</h4>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="movies">
+                <div class="movies-title">
+                    <h1>ACTION</h1>
+                </div>
+                <ul>
+                    <% for(action of action) { %>
+                    <li>
+                        <img src="<%= action.url %>" alt="">
+                        <div class="movie-card">
+                            <h4><%= action.movie_name %></h4>
+                            <img class="images" src="<%= action.url %>" alt="">
+                            <a href="/view/<%= action.movie_name %>">Watch NOW</a>
+                        </div>
+                    </li>
+                    <% } %>
+                </ul>
+            </div>
+            <!-- fist-end -->
+
+            <div class="movies">
+                <div class="movies-title">
+                    <h1>COMEDY</h1>
+                </div>
+                <ul>
+                    <% for(comady of comady) { %>
+                    <li>
+                        <img src="<%= comady.url %>" alt="">
+                        <div class="movie-card">
+                            <h4><%= comady.movie_name %></h4>
+                            <img class="images" src="<%= comady.url %>" alt="">
+                           <a href="/view/<%= comady.movie_name %>">Watch NOW</a>
+                        </div>
+                    </li>
+                    <% } %>
+                </ul>
+            </div>
+            <!-- second-end -->
+        </div>
+        <a href="/upload">ADD MOVIE</a>
+    </div>
+
+    <script src="/js/slider.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies Geeks - Tv Series</title>
+    <link rel="stylesheet" href="/css/tv.css">
+    <link rel="icon" href="/images/web logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container2">
+        <div class="nav">
+            <div class="logo">
+                <a href="">
+                    <img src="/images/logo web 1.png" alt="">
+                </a>
+            </div>
+            <div class="search">
+                <div class="input-search">
+                    <form action="/search/tv">
+                    <input class="search" type="text" name="q" autocomplete="off" placeholder="Search">
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="pages">
+                <ul>
+                    <li><a class="nav-a" href="/home">Home</a></li>
+                    <li><a class="nav-a" href="/about">About</a></li>
+                    <li><a class="nav-a" href="/tv">Tv Series</a></li>
+                    <li><a class="nav-a" href="/watch-later">Watch later</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="hero">
+            <div class="slider">
+                <div class="frame">
+                    <div class="main-slider">
+                        <img src="/images/simage1.jpg" class="image">
+                        <img src="/images/simage2.jpg" class="image">
+                        <img src="/images/simage3.jpg" class="image">
+                        <img src="/images/simage4.jpg" class="image">
+                    </div>
+                    <div class="arrows">
+                        <img src="/images/arrow.png" class="arrow-left">
+                        <img src="/images/arrow.png" class="arrow-right">
+                    </div>
+                </div>
+            </div>
+           <!-- slider-end -->
+           
+           <div class="recomanded first-card">
+            <div class="rec-title">
+              <h4>Top Series</h4>
+            </div>
+            <div class="rec-content">
+              <ul>
+                <% for(Drama of Drama) { %>
+                <li>
+                  <img src="<%= Drama.landscape %>" alt="">
+                  <div class="img-card">
+                    <div class="film-name">
+                      <h4><%= Drama.title %></h4>
+                    </div>
+                    <div class="about-film">
+                      <div class="year"><p class="same-p"><%= Drama.year %></p></div>
+                      <div class="age-certifiaction"><div class="age-box"><p class="pg-13"><%= Drama.rating %></p></div></div>
+                      <div class="duration"><p class="same-p"><%= Drama.duration %></p></div>
+                      <div class="genra"><p class="same-p"><%= Drama.genra %></p></div>
+                    </div>
+                    <div class="details">
+                      <p><%= Drama.discription %></p>
+                    </div>
+                    <a href="/tv/view/<%= Drama.title %>"><button class="btn"><i class="fa-solid fa-play"></i>WATCH NOW</button></a>
+                  </div>
+                </li>
+                <% } %>
+              </ul>
+            </div>
+          </div>
+
+          <div class="recomanded">
+            <div class="rec-title">
+              <h4>Thriller Series</h4>
+            </div>
+            <div class="rec-content">
+              <ul>
+                <li>
+                  <img src="T7.jpg" alt="">
+                  <div class="img-card">
+                    <div class="film-name">
+                      <h4>No Hard Fellings</h4>
+                    </div>
+                    <div class="about-film">
+                      <div class="year"><p class="same-p">2019</p></div>
+                      <div class="age-certifiaction"><div class="age-box"><p class="pg-13">PG-13</p></div></div>
+                      <div class="duration"><p class="same-p">3h 1m</p></div>
+                      <div class="genra"><p class="same-p">Action</p></div>
+                      <div class="imdb-ratings">
+                        <div class="imdb"><i class="fa-brands fa-imdb"></i></div>
+                        <div class="score"><p id="score-imdb">8.4</p></div>
+                      </div>
+                    </div>
+                    <div class="details">
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, delectus quaerat. Repudiandae cumque doloribus explicabo accusamus numquam sapiente eveniet quidem ratione facere maiores maxime, autem, similique, asperiores ad aliquam eum.</p>
+                    </div>
+                    <button class="btn"><i class="fa-solid fa-play"></i>WATCH NOW</button>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+    
+        </div>
+        <!-- hero-end -->
+         <a href="/tv/upload">upload series</a>
+    
+    </div>
+    <!-- container-end -->
+    <script src="/js/slider.js"></script>
+</body> 
+</html>

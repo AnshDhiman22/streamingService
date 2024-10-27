@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies Geeks </title>
+    <link rel="stylesheet" href="/css/player.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="icon" href="/images/web logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container2">
+        <div class="nav">
+            <div class="logo">
+                <a href="">
+                    <img src="/images/logo web 1.png" alt="">
+                </a>
+            </div>
+            <div class="search">
+                <div class="input-search">
+                    <form action="/search/tv">
+                    <input class="search" type="text" name="q" autocomplete="off" placeholder="Search">
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="pages">
+                <ul>
+                    <li><a class="nav-a" href="/home">Home</a></li>
+                    <li><a class="nav-a" href="/about">About</a></li>
+                    <li><a class="nav-a" href="/tv">Tv Series</a></li>
+                    <li><a class="nav-a" href="/watch-later">Watch later</a></li>
+                </ul>
+            </div>
+        </div>
+        <% if (list.length > 0) { %>
+            <% list.forEach(function(video) { %>
+        <div class="container1">
+            <div class="movie-title">
+              <div class="movie-name">
+                  <h2><%= video.title %></h2>
+              </div>
+            </div>
+            <div class="player">
+                <div class="container show-controls">
+                    <div class="wrapper">
+                        <div class="video-timeline">
+                            <div class="progress-area">
+                                <span>00:00</span>
+                                <div class="progress-bar"></div>
+                            </div>
+                        </div>
+                        <ul class="video-controls">
+                            <li class="options left">
+                                <button class="volume"><i class="fa-solid fa-volume-high"></i></button>
+                                <input type="range" min="0" max="1" step="any">
+                                <div class="video-timer">
+                                    <p class="current-time">00:00</p>
+                                    <p class="separator"> / </p>
+                                    <p class="video-duration">00:00</p>
+                                </div>
+                            </li>
+                            <li class="options center">
+                                <button class="skip-backward"><i class="fas fa-backward"></i></button>
+                                <button class="play-pause"><i class="fas fa-play"></i></button>
+                                <button class="skip-forward"><i class="fas fa-forward"></i></button>
+                            </li>
+                            <li class="options right">
+                                <div class="playback-content">
+                                    <button class="playback-speed"><span class="material-symbols-rounded"></span></button>
+                                    <ul class="speed-options">
+                                        <li data-speed="2">2x</li>
+                                        <li data-speed="1.5">1.5x</li>
+                                        <li data-speed="1" class="active">Normal</li>
+                                        <li data-speed="0.75">0.75x</li>
+                                        <li data-speed="0.5">0.5x</li>
+                                    </ul>
+                                </div>
+                                <button class="pic-in-pic"><span class="material-icons">picture_in_picture_alt</span></button>
+                                <button class="fullscreen"><i class="fa-solid fa-expand"></i></button>
+                            </li>
+                        </ul>
+                    </div>
+                    <video src="/series/<%= video.title %>.mp4"></video>
+                </div>
+            </div>
+            <% }); %>
+            <% } %>
+            <div class="similar-movies">
+                <div class="simailer-content">
+                    <h2>Similer Content</h2>
+                </div>
+                <div class="similer-section">
+                    <ul>
+                        <% for(series of series) { %>
+                        <a href="tv/view/<%= series.title %>"> 
+                        <li>
+                            <div class="card-content">
+                                <div class="imgs">
+                                  <img src="<%= series.landscape %>" alt="">
+                                </div>
+                                <h3><%= series.title %></h3>
+                          </div>
+                        </li>
+                        </a>   
+                        <% } %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    
+
+    </div>
+    <script src="/js/player.js"></script>
+</body>
+</html>
